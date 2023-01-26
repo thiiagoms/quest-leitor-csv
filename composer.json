@@ -7,5 +7,15 @@
             "email": "thiagom.devsec@gmail.com",
             "homepage": "https://github.com/thiiagoms"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "Src\\": "src"
+        }
+    },
+    "require": {
+        "fakerphp/faker": "^1.21",
+        "thiiagoms/pretty-print": "^1.0",
+        "vlucas/phpdotenv": "^5.5"
+    }
 }
