@@ -1,0 +1,11 @@
+{
+    "name": "thiiagoms/quest-csv-reader",
+    "description": "Leitor CSV de arquivo para importação direta na base de dados",
+    "authors": [
+        {
+            "name": "Thiago Silva AKA thiiagoms",
+            "email": "thiagom.devsec@gmail.com",
+            "homepage": "https://github.com/thiiagoms"
+        }
+    ]
+}
