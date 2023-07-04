@@ -62,7 +62,6 @@ class UserService
 
             $this->userRepository->store($user);
             $userCreated++;
-            
         }, $data);
 
         Printer::success("Quantidade de usuários inseridos: {$userCreated}");
