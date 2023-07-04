@@ -7,29 +7,29 @@ services:
                 uid: 1000
             context: ./
             dockerfile: ./docker/php/Dockerfile
-        image: questcsv
-        container_name: questcsv-app
+        image: quest-csv
+        container_name: quest-csv-app
         restart: unless-stopped
         working_dir: /var/www/
         volumes:
             - ./:/var/www
         networks:
-            - questcsv
+            - quest-csv
     db:
         image: mysql:5.7
-        container_name: questcsv-db
+        container_name: quest-csv-db
         restart: unless-stopped
         environment:
-            MYSQL_DATABASE: questcsv
+            MYSQL_DATABASE: quest-csv
             MYSQL_ROOT_PASSWORD: root
             MYSQL_PASSWORD: root
             SERVICE_TAGS: dev
             SERVICE_NAME: mysql
         volumes:
-            - ./db.sql:/docker-entrypoint-initdb.d/1.sql"
+            - ./docker/mysql/db.sql:/docker-entrypoint-initdb.d/db.sql"
             - ./docker/mysql:/docker-entrypoint-initdb.d
         networks:
-            - questcsv
+            - quest-csv
 networks:
     questcsv:
         driver: bridge
