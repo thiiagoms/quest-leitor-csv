@@ -1,5 +1,3 @@
-### QUEST02 - Leitor CSV de arquivos
-
 <div align="center">
     <p>
         <a href="https://github.com/thiiagoms/quest-exercicio02-csv">
@@ -18,44 +16,85 @@
     </p>
 </div>
 
-### [PT-BR] Processo de SetUp :brazil:
+- [Dependências :heavy_plus_sign:](#dependências)
+- [Instalação :package:](#instalação)
+- [Uso :runner:](#uso)
+- [Bonus :medal_sports:](#bonus)
 
-- [Dependências](#Dependencies)
-- [Instalação](#Install)
-
-
-### Dependências
+## Dependências
 
 - Docker :whale:
 
-### Instalação:
+## Instalação:
 
-01 - Clone o repositório:
+01 -) Clone o repositório:
+
 ```bash
-$ git clone https://github.com/thiiagoms/quest-exercicio02-csv
+$ git clone https://github.com/thiiagoms/quest-leitor-csv
 ```
 
-02 - Vá para o diretório do projeto
+02 -) Vá para o diretório do projeto:
+
 ```bash
-$ cd quest-exercicio02-csv
-quest-exercicio02-csv $
+$ cd quest-leitor-csv
+quest-leitor-csv $
 ```
 
-03 - Execute o script `setup.sh` utilizando Git Bash/Powershell ou sua shell favorita :shell:
+03 -) Faça uma cópia do arquivo `.env.example` para `.env`:
 ```bash
-quest-exercicio02-csv $ chmod+x setup.sh
-quest-exercicio02-csv $ ./setup.sh
+quest-leitor-csv $ cp .env.example .env
+```
 
+## Uso
+
+01 -) Execute o script `setup.sh` utilizando Git Bash/Powershell ou sua shell favorita :shell:
+```bash
+quest-leitor-csv $ chmod+x setup.sh
+quest-leitor-csv $ ./setup.sh
     ██      ███████ ██ ████████  ██████  ██████       ██████ ███████ ██    ██ 
     ██      ██      ██    ██    ██    ██ ██   ██     ██      ██      ██    ██ 
     ██      █████   ██    ██    ██    ██ ██████      ██      ███████ ██    ██ 
     ██      ██      ██    ██    ██    ██ ██   ██     ██           ██  ██  ██  
     ███████ ███████ ██    ██     ██████  ██   ██      ██████ ███████   ████  
 
-    => Exercício 01 e 03 - CRUD/API de Produtos
+    => Exercício 02 - Leitor CSV
 
-    [*] Author: Thiago Silva AKA thiiagoms
-    [*] E-mail: thiagom.devsec@gmail.com
+    [*] Author: thiiagoms
+    [*] E-mail: thiiagoms@proton.me
 
 => Iniciando os containers
+=> Instalando dependências da aplicação
 ```
+
+02 -) Para fazer o **seed** dos dados, execute o seguinte comando:
+```bash
+quest-leitor-csv $ docker-compose exec app php quest --seed
+
+    ██      ███████ ██ ████████  ██████  ██████       ██████ ███████ ██    ██ 
+    ██      ██      ██    ██    ██    ██ ██   ██     ██      ██      ██    ██ 
+    ██      █████   ██    ██    ██    ██ ██████      ██      ███████ ██    ██ 
+    ██      ██      ██    ██    ██    ██ ██   ██     ██           ██  ██  ██  
+    ███████ ███████ ██    ██     ██████  ██   ██      ██████ ███████   ████
+    
+        -> Desafio 02: Leitor CSV para importação/atualização de arquivos.
+    
+        [*] Author: Thiago Silva
+        [*] E-mail: thiagom.devsec@gmail.com
+      
+    Quantidade de usuários inseridos: 0
+    Quantidade de usuarios atualizados: 50
+```
+
+## Bonus:
+
+01 -) Para executar os testes:
+```bash
+quest-leitor-csv $ composer test
+```
+
+02 -) Para executar o lint e seu fix:
+```bash
+quest-leitor-csv $ composer phpcs src
+quest-leitor-csv $ composer phpcbf src
+```
+

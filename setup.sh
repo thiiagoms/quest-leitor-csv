@@ -30,9 +30,3 @@ docker-compose up -d
 
 echo -e "=> Instalando dependências da aplicação\n"
 docker-compose exec app composer install
-
-echo -e "=> Inicindo as configurações da aplicação\n"
-docker-compose exec app cp .env.example .env
-
-echo -e "=> Iniciando a aplicação"
-docker-compose exec app php app.php

@@ -1,21 +1,31 @@
 {
     "name": "thiiagoms/quest-csv-reader",
-    "description": "Leitor CSV de arquivo para importação direta na base de dados",
+    "description": "Importação de arquivos diratamente para base de dados",
     "authors": [
         {
-            "name": "Thiago Silva AKA thiiagoms",
+            "name": "Thiago Silva",
             "email": "thiagom.devsec@gmail.com",
             "homepage": "https://github.com/thiiagoms"
         }
     ],
     "autoload": {
         "psr-4": {
-            "Src\\": "src"
+            "Quest\\": "src"
         }
     },
     "require": {
-        "fakerphp/faker": "^1.21",
         "thiiagoms/pretty-print": "^1.0",
-        "vlucas/phpdotenv": "^5.5"
+        "vlucas/phpdotenv": "^5.5",
+        "ext-pdo": "*"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "*",
+        "phpstan/phpstan": "^1.10",
+        "phpunit/phpunit": "^10"
+    },
+    "scripts": {
+        "phpcs":  "phpcs --standard=PSR12",
+        "phpcbf":  "phpcbf --standard=PSR12",
+        "test": "phpunit"
     }
 }
